@@ -9,11 +9,9 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@primevue/themes": "^4.0.4",
+    "@yeger/vue2-masonry-wall": "^5.0.15",
     "bootstrap": "^5.3.3",
     "core-js": "^3.8.3",
-    "primeicons": "^7.0.0",
-    "primevue": "^2.10.4",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
