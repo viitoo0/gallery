@@ -1,18 +1,34 @@
+<style>
+
+@media (min-width: 2000px){
+    #uploadButton{
+        padding: 23px 110px;
+        font-size: 1.5em;
+    }
+    
+    #inputSearch{
+        padding: 1.3em 60%
+    }
+}
+
+</style>
 
 <template>
     <div>
         <div class="container">
-            <!-- Upload Button -->
+            <!-- Upload Button and Search Input -->
             <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-outline-success " style="position: absolute; top: 15px; right: 15px;">UPLOAD</button>
+                <div class="col-3 col-lg-2">
+                    <button id="uploadButton" type="button" class="btn btn-outline-success mb-3 mt-3" style="position:absolute; right: 5%;">UPLOAD</button>
+                </div>
+                <div class="col-9 col-lg-10 order-first">    
+                    <div class="input-group input-group-lg mb-3 mt-3">
+                        <input type="text" id="inputSearch" class="form-control" @input="search">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Search Input -->
-        <div class="input-group input-group-lg mb-3 mt-3">    
-                <input type="text" class="form-control" @input="search">
-        </div>
+
 
         <!-- Listagem dos Produtos -->
         <div class="row" >
