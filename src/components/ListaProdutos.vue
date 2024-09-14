@@ -21,10 +21,11 @@
 <template>
     <div>
         <div class="container">
+            <registerForm v-show="isModalVisible" @close="closeModal"/>
             <!-- Upload Button and Search Input -->
             <div class="row">
                 <div class="col-3 col-lg-2">
-                    <button id="uploadButton" type="button" class="btn btn-outline-success mb-3 mt-3" style="position:absolute; right: 5%;">UPLOAD</button>
+                    <button id="uploadButton" type="button" class="btn btn-outline-success mb-3 mt-3" style="position:absolute; right: 5%;" @click="showModal">UPLOAD</button>
                 </div>
                 <div class="col-9 col-lg-10 order-first">    
                     <div class="input-group input-group-lg mb-3 mt-3">
@@ -58,12 +59,12 @@
 
 <script>
 // import AutoComplete from 'primevue/autocomplete';
-
+import registerForm from './registerForm.vue';
 export default {
     name: 'ListaProdutos',
-    // components: {
-    //     AutoComplete,
-    // },
+    components: {
+        registerForm,
+    },
     data(){
         return{   
             showName: false,    
@@ -102,7 +103,8 @@ export default {
                 categoria: "Mercearia",
                 selecionado: false    
             },],
-            itemsFiltrado: null
+            itemsFiltrado: null,
+            isModalVisible: false,
         }
     },
     created() {
@@ -114,6 +116,12 @@ export default {
         },
         color(item){
             item.selecionado = !item.selecionado
+        },
+        showModal() {
+            this.isModalVisible = true;
+        },
+        closeModal() {
+            this.isModalVisible = false;
         }
     },
 
